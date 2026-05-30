@@ -1,0 +1,54 @@
+# =========================================================
+# Ratatoskr Continuous Integration Workflow
+#
+# Purpose:
+# Validate message transport,
+# delivery tracking, and routing
+# capabilities.
+#
+# Philosophy:
+# Observe.
+# Carry.
+# Deliver.
+# Connect.
+# =========================================================
+
+name: Ratatoskr Tests
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+
+        with:
+          python-version: "3.12"
+
+      - name: Run Message Test
+        run: python -m tests.test
+
+      - name: Run Delivery Test
+        run: python -m tests.test_delivery
+
+      - name: Run Message ID Test
+        run: python -m tests.test_message_id
+
+      - name: Run Delivery Log Test
+        run: python -m tests.test_delivery_log
