@@ -17,7 +17,10 @@ Inspired by the messenger squirrel of Norse mythology, Ratatoskr is responsible 
 - Message Creation
 - Message Routing
 - Delivery Tracking
-- Automatic Message ID Generation
+- Message Acknowledgement
 - Delivery History Logging
+- Operational Contract Transport
+- Automatic Message ID Generation
 - Future Message Integrity Validation
 - Future Secure Inter-System Communication
+- Future Reliable Delivery Guarantees
